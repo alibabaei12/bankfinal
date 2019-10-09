@@ -1,0 +1,36 @@
+<html>
+<body background="https://www.hyperwallet.com/app/uploads/blog_lg-750x330-c-default.png">
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <!--  <div class="navbar-header"> -->
+        <!-- <a class="navbar-brand" href="#">Banking</a> -->
+      <!-- </div>  -->
+  
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+            <li><a routerLink="banking" >Banking</a></li>
+          <li><a routerLink="applycredit">Apply Credit Card</a></li>
+          <li><a routerLink="instantdecision">Decision</a></li>
+          <li><a routerLink="retrieve">Retrieve Application</a></li>
+          <li><a routerLink="status">My Status</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li dd class="dropdown">
+            <a class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Login<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a routerLink="emplogin">Employee Login</a></li>
+                <li><a routerLink="userlogin">User Login</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a routerLink="logout">User Login</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+</body>
+</html>
+  <router-outlet></router-outlet>

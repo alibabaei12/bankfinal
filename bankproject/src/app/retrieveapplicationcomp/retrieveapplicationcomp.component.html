@@ -1,0 +1,23 @@
+first name is {{contact.first_name}}
+
+<div class="container">
+        <div class="row">
+          <div class="Absolute-Center is-Responsive">
+   
+            <div class="col-sm-12 col-md-10 col-md-offset-1">
+              <form (submit)="getContacts()">
+                <div class="form-group input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                  <input class="form-control" type="email" [(ngModel)] = "email" name="email" placeholder="email"/>          
+                </div>
+                <div class="form-group">
+                  <input type="submit" class="btn btn-def btn-block btn btn-success" value="Find my Application">
+                </div>
+                <!-- <div class="panel panel-default" [ngStyle]="{'background-image': getUrl()}"> -->
+              </form>        
+            </div>  
+          </div>    
+        </div>
+      </div>
+
+      <!-- (click) = "find()"  -->
