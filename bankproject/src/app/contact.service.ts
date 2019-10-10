@@ -15,17 +15,20 @@ export class ContactService {
 
   getContacts(email)
   {
-    console.log("its working")
-    return this.http.get('http://localhost:3000/api/contacts/'+email).map(res => res.json());
+
+    return  this.http.get('http://localhost:3000/api/contacts/'+ email)
+    .map(res => res.json())
+
   }
 
   //add contact method 
   addContact(newContact)
   {
-    var headers = new  Headers();
-    headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/api/contacts', newContact, {headers:headers})
+    // var headers = new  Headers();
+    // headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:3000/api/contacts', newContact)
     .map(res => res.json());
+    // , {headers:headers}
   }
 
   //delete method

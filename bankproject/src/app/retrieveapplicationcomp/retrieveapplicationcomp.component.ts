@@ -2,27 +2,28 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {ApplycreditcompComponent} from '../applycreditcomp/applycreditcomp.component'
 import { Contact } from '../contact';
+import { ContactService } from '../contact.service';
 @Component({
   selector: 'app-retrieveapplicationcomp',
   templateUrl: './retrieveapplicationcomp.component.html',
-  styleUrls: ['./retrieveapplicationcomp.component.css']
+  styleUrls: ['./retrieveapplicationcomp.component.css'],
+  providers: [ContactService]
 })
 export class RetrieveapplicationcompComponent implements OnInit {
-  contacts: Contact[] ;
+
   contact: Contact ;
-  
-  email: string;
-  contactService: any;
-  constructor(private router: Router) {}
+   
+  email: any;
+  constructor(private router: Router, private contactService: ContactService ) {}
 
-  find(): void {
-    this.router.navigateByUrl('applycredit');
-  }
+  // find(): void {
+  //   this.router.navigateByUrl('applycredit');
+  // }
 
 
-getContacts()
+getContact()
 {
-  this.contactService.getContacts(this.email).subscribe(contact => {this.contact = contact});
+   this.contactService.getContacts(this.email).subscribe(contact2 => {this.contact = contact2; console.log(contact2[0].first_name)});
 }
 
 // getUrl()

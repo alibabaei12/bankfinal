@@ -1,12 +1,19 @@
-first name is {{contact.first_name}}
+
+<div *ngFor="let cont of contact">
+  <input type = "text" value="{{cont.first_name}}"> <br>
+  
+  <input type = "text" value="{{cont.last_name}}"> <br>
+</div>
+
 
 <div class="container">
         <div class="row">
           <div class="Absolute-Center is-Responsive">
-   
+           
             <div class="col-sm-12 col-md-10 col-md-offset-1">
-              <form (submit)="getContacts()">
+              <form (submit)="getContact()">
                 <div class="form-group input-group">
+                  
                   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                   <input class="form-control" type="email" [(ngModel)] = "email" name="email" placeholder="email"/>          
                 </div>

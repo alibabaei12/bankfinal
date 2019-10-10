@@ -10,7 +10,7 @@ var app = express();
 
 const route = require('./routes/route');
 
-app.use(cors());
+app.use('*',cors());
 //body-parser
 app.use(bodyparser.json());
 

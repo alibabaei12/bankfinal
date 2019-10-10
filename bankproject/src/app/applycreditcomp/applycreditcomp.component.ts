@@ -10,8 +10,6 @@ import { Contact } from '../contact';
   providers: [ContactService]
 })
 export class ApplycreditcompComponent implements OnInit {
-
-  contacts: Contact[] = [];
   contact: Contact;
   first_name: string ;
   middle_name: string ;
@@ -40,7 +38,7 @@ export class ApplycreditcompComponent implements OnInit {
 
   addContact()
   {
-    const newContact = {
+    const newContact: Contact = {
       first_name: this.first_name,
       middle_name: this.middle_name,
       last_name: this.last_name,
@@ -57,17 +55,14 @@ export class ApplycreditcompComponent implements OnInit {
       rent: this.rent,
       employer: this.employer,
       emp_phone: this.emp_phone,
-      time_employed: this.time_employed
+      time_employed: this.time_employed,
+      status: this.status
     }
     this.contactService.addContact(newContact).subscribe(contact=>{
-      this.contacts.push(contact);
+       this.contact=contact;
     })
   }
 
-  getContact(email:any)
-  {
-    this.contactService.getContacts(email).subscribe(contacts => this.contacts = contacts);
-  }
   ngOnInit() {
   }
 
