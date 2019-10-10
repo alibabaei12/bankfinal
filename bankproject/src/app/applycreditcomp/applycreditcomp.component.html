@@ -86,9 +86,11 @@
         </div>
     </div>
     <!-- <button class="btn btn-success"  routerLink="logout" >Submit</button> -->
-    <input type="submit" class="btn btn-success" value="Submit">
+    <input type="submit" class="btn btn-success" value="Submit" (click)="instanceDicision()" >
     <button class="btn btn-primary">Save</button>
 </form>
+
+decision is:  {{instDec}}
 <router-outlet></router-outlet>
 
 <!-- (click)="decision()" -->

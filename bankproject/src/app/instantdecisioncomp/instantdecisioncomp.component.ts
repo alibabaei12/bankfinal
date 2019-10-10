@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApplycreditcompComponent } from '../applycreditcomp/applycreditcomp.component';
 
 @Component({
   selector: 'app-instantdecisioncomp',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InstantdecisioncompComponent implements OnInit {
 
+  
   constructor() { }
-
+ 
+ 
   ngOnInit() {
+  console.log("start")
+    
   }
 
 }

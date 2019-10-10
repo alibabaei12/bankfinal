@@ -17,7 +17,7 @@ export class ApplycreditcompComponent implements OnInit {
   email: string;
   phone: number;
   ssn: string;
-  income: string;
+  income: string ;
   gender: string;
   dob: Date;
   address: string;
@@ -30,12 +30,15 @@ export class ApplycreditcompComponent implements OnInit {
   time_employed: number;
   status: string = "Pending";
 
+  getIncome():string{
+    return this.income;
+  }
   constructor(private router: Router, private contactService: ContactService) {}
 
   decision(): void {
       this.router.navigateByUrl('instantdecision');
   }
-
+  instDec:string = "";
   addContact()
   {
     const newContact: Contact = {
@@ -58,11 +61,27 @@ export class ApplycreditcompComponent implements OnInit {
       time_employed: this.time_employed,
       status: this.status
     }
-    
+    var y = +this.income;
+    console.log("income is " + y)
+    if(y < 1000)
+    {
+      this.instDec = "Denied";
+      newContact.status = "Denied";
+    }
+    else if(y> 10000){
+      this.instDec = "Approved";
+      newContact.status = "Approved";
+    }
+    else{
+      this.instDec = "Pending";
+    }
     this.contactService.addContact(newContact)
   }
 
   ngOnInit() {
   }
+
+ 
+
 
 }
