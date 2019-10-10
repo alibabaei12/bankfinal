@@ -28,7 +28,7 @@ export class ApplycreditcompComponent implements OnInit {
   employer: string;
   emp_phone: string;
   time_employed: number;
-  status: string;
+  status: string = "Pending";
 
   constructor(private router: Router, private contactService: ContactService) {}
 
@@ -58,9 +58,8 @@ export class ApplycreditcompComponent implements OnInit {
       time_employed: this.time_employed,
       status: this.status
     }
-    this.contactService.addContact(newContact).subscribe(contact=>{
-       this.contact=contact;
-    })
+    
+    this.contactService.addContact(newContact)
   }
 
   ngOnInit() {

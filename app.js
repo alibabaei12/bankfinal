@@ -2,31 +2,27 @@
 
 var express = require('express');
 
-var mongoose = require('mongoose');
 var bodyparser = require('body-parser');
 var cors = require('cors');
 var path = require('path');
 var app = express();
+
+const MongoClient = require("mongodb").MongoClient;
+const ObjectId = require("mongodb").ObjectID;
+var _ = require("underscore");
+
+
+const CONNECTION_URL =
+  "mongodb+srv://admin:admin@my-cluster-fpbo3.mongodb.net/test?retryWrites=true&w=majority";
+const DATABASE_NAME = "example";
+
+var database, collection;
 
 const route = require('./routes/route');
 
 app.use('*',cors());
 //body-parser
 app.use(bodyparser.json());
-
-//connect to mongodb
-mongoose.connect('mongodb://localhost:27017/contactlist');
-
-//on conncetion
-mongoose.connection.on('connected', ()=>{
-    console.log('connected to database mongodb @27017');
-});
-
-mongoose.connection.on('error', (err)=>{
-    if(err){
-        console.log(err);
-    }
-})
 
 //port number
 const port = 3000;
@@ -43,5 +39,16 @@ app.get('/', (req, res)=>{
 
 
 app.listen(port, ()=>{
-    console.log("server connected succesfully");
-});
+    MongoClient.connect(
+      CONNECTION_URL,
+      { useNewUrlParser: true },
+      (error, client) => {
+        if (error) {
+          throw error;
+        }
+        database = client.db(DATABASE_NAME);
+        collection = database.collection("people");
+        console.log("Connected to `" + DATABASE_NAME + "`!");
+      }
+    );
+  });

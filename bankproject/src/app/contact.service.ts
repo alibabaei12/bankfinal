@@ -16,25 +16,27 @@ export class ContactService {
   getContacts(email)
   {
 
-    return  this.http.get('http://localhost:3000/api/contacts/'+ email)
+    return  this.http.get('http://localhost:3000/getdata/'+ email)
     .map(res => res.json())
 
   }
 
   //add contact method 
-  addContact(newContact)
+  addContact(newContact:Contact)
   {
     // var headers = new  Headers();
     // headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/api/contacts', newContact)
-    .map(res => res.json());
+    return this.http.post('http://localhost:3000/postdata', newContact)
+    .subscribe(mydata=>{
+      console.log(mydata); 
+        })
     // , {headers:headers}
   }
 
-  //delete method
-  deleteContact(id)
-  {
-    return this.http.delete('http://localhost:3000/api/contacts/'+id)
-    .map(res => res.json());
-  }
+  // //delete method
+  // deleteContact(id)
+  // {
+  //   return this.http.delete('http://localhost:3000/api/contacts/'+id)
+  //   .map(res => res.json());
+  // }
 }
