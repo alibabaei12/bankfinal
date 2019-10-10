@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InstantdecisioncompComponent implements OnInit {
 
+  showSubContent = 1;
   constructor() { }
 
   ngOnInit() {

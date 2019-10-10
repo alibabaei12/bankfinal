@@ -11,20 +11,47 @@
         </div>
         
         <div class="form-group col-md-4">
-            <label for="firstName">First Name</label>
-            <input type="text" class="form-control" [(ngModel)] = "first_name" name="first_name" id="firstName" placeholder="{{firstName}}">
+            <label for="firstName">First Name
+                <span *ngIf=firstName.invalid>
+                    <span *ngIf=firstName.errors.required style="color:red">
+                        First name can't be blank
+                    </span>
+                    <span *ngIf=firstName.errors.minlength style="color:red">
+                        First name is incorrect
+                    </span>
+                </span>
+            </label>
+            <input type="text" #firstName=ngModel ngModel required minlength="2" class="form-control" [(ngModel)] = "first_name" name="first_name" id="firstName" placeholder="{{firstName}}">
         </div>
         <div class="form-group col-md-4">
             <label for="lastName">Middle Name</label>
             <input type="text" class="form-control"  [(ngModel)] = "middle_name"name="middle_name" id="middleName" placeholder="Middle Name">
         </div>
         <div class="form-group col-md-4">
-            <label for="lastName">Last Name</label>
-            <input type="text" class="form-control" [(ngModel)] = "last_name" name = "last_name" id="lastName" placeholder="Last Name">
+            <label for="lastName">Last Name
+                <span *ngIf=lastName.invalid>
+                    <span *ngIf=lastName.errors.required style="color:red">
+                        Last name can't be blank
+                    </span>
+                    <span *ngIf=lastName.errors.minlength style="color:red">
+                        Last name is incorrect
+                    </span>
+                </span>
+            </label>
+            <input type="text" #lastName=ngModel ngModel required minlength="2" class="form-control" [(ngModel)] = "last_name" name = "last_name" id="lastName" placeholder="Last Name">
         </div>
         <div class="form-group col-md-4">
-            <label for="email">Email</label>
-            <input type="text" class="form-control"  [(ngModel)] = "email" name="email" id="email" placeholder="Email">
+            <label for="email">Email
+                <span *ngIf=emails.invalid>
+                    <span *ngIf=emails.errors.required style="color:red">
+                        Email can't be blank
+                    </span>
+                    <span *ngIf=emails.errors.email style="color:red">
+                        Email is incorrect
+                    </span>
+                </span>
+            </label>
+            <input type="text" #emails=ngModel ngModel required email class="form-control"  [(ngModel)] = "email" name="email" id="email" placeholder="Email">
         </div>
         <div class="form-group col-md-4">
             <label for="phone">Phone Number</label>

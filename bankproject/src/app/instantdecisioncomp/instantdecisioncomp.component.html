@@ -1,16 +1,30 @@
-<div class = "container">
-    
-<div class = "col-lg-4">
-<div class="alert alert-success">
-    Approved!
-</div>
-<div class="alert alert-danger" role="alert">
-    Denied
-</div>
-<div class="alert alert-light" role="alert">
-    Pending....
-</div>
-</div>
 
+
+<!-- <div class="container"> -->
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLMaJ1RQoX5KoaPRUWWw2r5JycvmUeZ-Vn6V7mdmRRqHIKux0ouA"> 
+    <div class="row">
+        <div class="Absolute-Center is-Responsive">
+            <div class="col-sm-12 col-md-1 col-md-offset-1" id="approved">
+                <div [ngSwitch]="showSubContent">
+                    <div *ngSwitchCase="1">
+                        <div class="alert alert-success">
+                            Approved!
+                        </div>
+                    </div>
+                    <div *ngSwitchCase="2">
+                        <!-- <div class = "col-lg-4"> -->
+                        <div class="alert alert-danger" >
+                            Denied
+                        </div>
+                        <!-- </div> -->
+                    </div>
+                    <div *ngSwitchCase="3">
+                        <div class="alert alert-info" >
+                            Still Pending
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <img src="2wCEAAkGBxITEhUSExIVFhUWFRUWFRYVFRUVFRUVFRYWFhUVFRgYHSggGBolGxUVITEhJSkrLi4uFx8zODMsNyktLisBCgoKDg0OFxAQGi0dHR0tLS0rLS0tLS0tLS0tLSstLS0rKy0tKy0tLS0tKy0tLS0tLS0tLS0tLS0tLS0tLS0rLf">
+<!-- </div> -->
