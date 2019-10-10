@@ -1,0 +1,13 @@
+<div *ngFor="let cont of contact">
+        
+    
+<ul class="list-group">
+    <li class="list-group-item list-group-item-info">
+        First Name: <span>{{cont.first_name}}</span><br>
+        Last Name: <span>{{cont.last_name}}</span><br>
+        <button type="submit" class="btn btn-primary">View</button>
+        <button type="submit" class="btn btn-success">Approve</button>
+        <button type="submit" class="btn btn-danger">Reject</button>
+    </li>
+</ul>
+</div>

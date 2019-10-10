@@ -8,6 +8,7 @@ import { UserLoginComponent } from './userlogincomp/userlogincomp.component';
 import {LogoutComponent} from './logout/logoutcomp.component';
 import {HeaderComponent} from './header.component';
 import { BankingComponent } from './banking/banking.component'
+import { EmployeedecisionComponent } from './employeedecision/employeedecision.component'
 
 
 export const AppRouting = RouterModule.forRoot ([
@@ -20,5 +21,6 @@ export const AppRouting = RouterModule.forRoot ([
     {path:'logout', component: LogoutComponent},
     {path:'header', component: HeaderComponent},
     {path:'banking', component: BankingComponent},
+    {path:'employeedecision', component: EmployeedecisionComponent},
     
 ])                          
