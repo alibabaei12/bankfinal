@@ -9,11 +9,13 @@ body{
     color: white;
   }
  
-  .Absolute-Center {
+  /* .Absolute-Center {
     margin: auto;
+    top: 5%;
+    left: 40%;
     position: absolute;
-    top: 0; left: 0; bottom: 0; right: 0;
-  }
+    
+  } */
   
   .Absolute-Center.is-Responsive {
     width: 50%; 
@@ -22,5 +24,18 @@ body{
     max-width: 400px;
     padding: 40px;
   }
+
+  .container{
+    top: 5%;
+    left: 35%;
+    position: absolute;
+  }
+  .save-form{
+    bottom: 5%;
+    
+    position: absolute;
+  }
+
+  
   
  
