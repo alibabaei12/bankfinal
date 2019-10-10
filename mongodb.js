@@ -15,10 +15,6 @@ app.use(cors());
 //   res.render("index");
 // });
 
-app.set("view engine", "ejs");
-app.set("views", __dirname + "/views");
-app.set("view  options", { layout: false });
-
 // app.use(
 //   BodyParser.urlencoded({
 //     extended: true
@@ -43,12 +39,13 @@ app.get("/getdata/:email", (request, response) => {
   });
 });
 
-app.get("/", (request, response) => {
+app.get("/getdata", (request, response) => {
   collection.find({}).toArray((error, result) => {
     if (error) {
       return response.status(500).send(error);
     }
-    response.render("index.ejs", { data: result });
+    // response.render("index.ejs", { data: result });
+    response.send(result);
   });
 });
 var userdata = [];

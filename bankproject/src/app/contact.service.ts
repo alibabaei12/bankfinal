@@ -21,6 +21,11 @@ export class ContactService {
 
   }
 
+  getAllData()
+  {
+    return  this.http.get('http://localhost:3000/getdata')
+    .map(res => res.json())
+  }
   //add contact method 
   addContact(newContact:Contact)
   {
