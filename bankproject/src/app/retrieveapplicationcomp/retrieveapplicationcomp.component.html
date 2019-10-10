@@ -5,7 +5,7 @@
 
 <div class="save-form">
   <form (submit)="updateContact()" >
-      
+     <div *ngFor= "let cont of contact">
     <div class="form-row">
       <div style="color: gray">
         <h3>Personal Informations</h3>
@@ -86,6 +86,7 @@
         <label for="dateFrom">Years of experience</label>
         <input type="text" value="{{cont.time_employee}}"><br>
       </div>
+    </div>
     </div>
 
     <!-- <button class="btn btn-success"  routerLink="logout" >Submit</button> -->
