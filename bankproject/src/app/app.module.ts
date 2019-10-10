@@ -17,6 +17,7 @@ import { BankingComponent } from './banking/banking.component'
 
 import { HttpModule } from '@angular/http';
 import {ContactService } from './contact.service';
+import { EmployeedecisionComponent } from './employeedecision/employeedecision.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {ContactService } from './contact.service';
     EmpLoginComponent,
     UserLoginComponent,
     DropDownDirective,
-    BankingComponent
+    BankingComponent,
+    EmployeedecisionComponent
   ],
   imports: [
     BrowserModule, AppRouting, FormsModule, HttpModule
