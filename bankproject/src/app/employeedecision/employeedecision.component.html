@@ -1,6 +1,6 @@
 <div *ngFor="let cont of contact">
         
-    
+    <div *ngIf="cont.status == 'Pending'">
 <ul class="list-group">
     <li class="list-group-item list-group-item-info">
         First Name: <span>{{cont.first_name}}</span><br>
@@ -10,4 +10,5 @@
         <button type="submit" class="btn btn-danger">Reject</button>
     </li>
 </ul>
+</div>
 </div>
