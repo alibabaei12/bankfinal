@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
+const mongoDB = require('mongodb');
 
-const contactSchema = mongoose.Schema({
+const contactSchema = mongoDB.Schema({
 first_name:{
 type: String,
 required: false
@@ -74,4 +74,4 @@ status:{
     default:'Pending'
 }
 });
-const applicants = module.exports = mongoose.model('contact',contactSchema);
+const applicants = module.exports = mongoDB.model('contact',contactSchema);

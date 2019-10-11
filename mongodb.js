@@ -26,7 +26,7 @@ app.post("/postdata", (request, response) => {
     if (error) {
       return response.status(500).send(error);
     }
-    response.send(result.result);
+    response.send(result);
   });
 });
 
@@ -48,25 +48,64 @@ app.get("/getdata", (request, response) => {
     response.send(result);
   });
 });
-var userdata = [];
-app.put("/updatedata/:id", (req, res) => {
-    var todoid = parseInt(req.params.id);
-    var mct = _.findWhere(userdata, { id: todoid });
-  
-    var body = _.pick(req.body, "taskname", "completed");
-  
-    var va = {};
-  
-    if (!mct) {
-      res.status(404).json({ error: "id not matched" });
-    } else {
-      va.taskname = body.taskname;
-      va.completed = body.completed;
-  
-      _.extend(mct, va);
-      res.json(mct);
-    }
+var userdata = []
+
+app.put("/updatedata/:email", (req, res) => {
+  MongoClient.connect(CONNECTION_URL, function(err, db) {
+    if (err) throw err;
+    
+    var dbo = db.db("example");
+    var myquery = { email: req.params.email};
+    console.log ("email is: " + req.params.email)
+    var newvalues = { $set: {status: req.body.status} };
+    console.log("status is: " + req.body.status)
+    dbo.collection("people").updateOne(myquery, newvalues, function(err, res) {
+      if (err) throw err;
+      console.log("1 document updated");
+      db.close
+    });
   });
+
+ res.send("hello")
+});
+
+app.put("/updateall/:email", (req, res) => {
+  MongoClient.connect(CONNECTION_URL, function(err, db) {
+    if (err) throw err;
+    
+    var dbo = db.db("example");
+    var myquery = { email: req.params.email};
+    console.log ("email is: " + req.params.email)
+    var newvalues = { $set: {
+        first_name: req.body.first_name,
+        middle_name: req.body.middle_name,
+        last_name: req.body.last_name,
+        email: req.body.email,
+        phone: req.body.phone,
+        ssn: req.body.ssn,
+        income: req.body.income,
+        gender: req.body.gender,
+        dob: req.body.dob,
+        address: req.body.address,
+        city: req.body.city,
+        state: req.body.state,
+        zipcode: req.body.zipcode,
+        rent: req.body.rent,
+        employer: req.body.employer,
+        emp_phone: req.body.emp_phone,
+        time_employed: req.body.time_employed,
+        status: req.body.status} };
+    console.log("status is: " + req.body.status)
+    dbo.collection("people").updateOne(myquery, newvalues, function(err, res) {
+      if (err) throw err;
+      console.log("1 document updated");
+      db.close
+    });
+  });
+
+ res.send("hello")
+});
+
 
 app.listen(3000, () => {
   MongoClient.connect(
@@ -77,6 +116,7 @@ app.listen(3000, () => {
         throw error;
       }
       database = client.db(DATABASE_NAME);
+    
       collection = database.collection("people");
       console.log("Connected to `" + DATABASE_NAME + "`!");
     }

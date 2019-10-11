@@ -21,6 +21,11 @@ export class ContactService {
 
   }
 
+  updateData(email, status)
+  {
+    return this.http.put('http://localhost:3000/updatedata/'+ email, status ).map(res => res.json());
+  }
+
   getAllData()
   {
     return  this.http.get('http://localhost:3000/getdata')
