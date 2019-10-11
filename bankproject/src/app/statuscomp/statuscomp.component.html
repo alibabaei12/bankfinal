@@ -1,11 +1,5 @@
 
 
-<!-- <div *ngFor="let cont of contact">
-  
-  {{cont.status}}
-</div> -->
-
-
 <div class="container">
         <div class="row">
           <div class="Absolute-Center is-Responsive">
@@ -25,6 +19,8 @@
             </div>  
           </div>    
         </div>
-      </div>
+      </div>          
 
-      <div *ngFor="let cont of contact" class="alert alert-info center-block" style="width: 12%;" role="alert"> <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>  application is {{cont.status}} </div>
+      <!-- <div *ngFor="let cont of contact" class="alert alert-info center-block" style="width: 12%;" role="alert"> <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>  application is {{cont.status}} </div> -->
+
+      <div *ngFor="let cont of contact" class="alert alert-info center-block" style="width: 12%;" role="alert"> <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> {{cont.status}} </div>

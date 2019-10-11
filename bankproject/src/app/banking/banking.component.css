@@ -1,6 +1,4 @@
-/* .containerpic{
-    background-color: lightblue;
-} */
+/* 
 header{
     align-self: center;
 }
@@ -9,4 +7,25 @@ img {
     left: 17%;
     top: 10%;
 
-}
+} */
+
+#bg {
+    position: fixed; 
+    top: 2.5; 
+    left: 0; 
+      
+
+    min-width: 100%;
+    min-height: 100%;
+  }
+
+  #some
+  {
+    position: absolute;
+    top: 40%;
+    left: 43%;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
