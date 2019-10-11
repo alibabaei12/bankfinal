@@ -10,7 +10,9 @@ import { ContactService } from '../contact.service';
 })
 export class EmployeedecisionComponent implements OnInit {
   contact: Contact ;
-
+  loadInfor: any[]=[];
+  email: string;
+  show: boolean=true;
   constructor(private contactService: ContactService) { }
 
   ngOnInit() {
@@ -21,4 +23,8 @@ export class EmployeedecisionComponent implements OnInit {
 {
    this.contactService.getAllData().subscribe(contact2 => {this.contact = contact2; console.log(contact2[0].first_name)});
 }
+  loadContact(email){
+    this.show=!this.show;
+    this.contactService.getContacts(email).subscribe(posts=>{this.loadInfor=posts})
+  }
 }

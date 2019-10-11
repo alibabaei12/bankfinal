@@ -1,14 +1,73 @@
 <div *ngFor="let cont of contact">
-        
+
     <div *ngIf="cont.status == 'Pending'">
-<ul class="list-group">
-    <li class="list-group-item list-group-item-info">
-        First Name: <span>{{cont.first_name}}</span><br>
-        Last Name: <span>{{cont.last_name}}</span><br>
-        <button type="submit" class="btn btn-primary">View</button>
-        <button type="submit" class="btn btn-success">Approve</button>
-        <button type="submit" class="btn btn-danger">Reject</button>
-    </li>
-</ul>
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-info">
+                First Name: <span>{{cont.first_name}}</span><br>
+                Last Name: <span>{{cont.last_name}}</span><br>
+
+                <button type="submit" (click)="loadContact(cont.email)" class="btn btn-primary">View</button>
+                <button type="submit" class="btn btn-success">Approve</button>
+                <button type="submit" class="btn btn-danger">Reject</button>
+            </li>
+        </ul>
+    </div>
 </div>
+<div *ngIf="show==false">
+    <!-- <ul *ngFor="let infor of loadInfor">
+        <li>
+            first name: <span>{{infor.first_name}}</span><br>
+            last name: <span>{{infor.last_name}}</span><br>
+        </li>
+    </ul> -->
+    <table class="table" *ngFor="let info of loadInfor">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Middle Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone</th>
+                <th scope="col">SSN</th>
+                <th scope="col">Income</th>
+                <th scope="col">Gender</th>
+                <th scope="col">DOB</th>
+                <th scope="col">Address</th>
+                <th scope="col">City</th>
+                <th scope="col">State</th>
+                <th scope="col">Zipcode</th>
+                <th scope="col">Rent</th>
+                <th scope="col">Employer</th>
+                <th scope="col">Employer Phone</th>
+                <th scope="col">Time Employed</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>{{info.first_name}}</td>
+                <td>{{info.middle_name}}</td>
+                <td>{{info.last_name}}</td>
+                <td>{{info.email}}</td>
+                <td>{{info.phone}}</td>
+                <td>{{info.ssn}}</td>
+                <td>{{info.income}}</td>
+                <td>{{info.gender}}</td>
+                <td>{{info.address}}</td>
+                <td>{{info.city}}</td>
+                <td>{{info.state}}</td>
+                <td>{{info.zipcode}}</td>
+                <td>{{info.rent}}</td>
+                <td>{{info.employer}}</td>
+                <td>{{info.emp_phone}}</td>
+                <td>{{info.time_employed}}</td>
+                <td>{{info.status}}</td>
+              </tr>
+            </tbody>
+          </table>
+    
+</div>
+<div *ngIf="show==true">
+    display nothing
 </div>
