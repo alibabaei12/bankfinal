@@ -1,9 +1,9 @@
 
 
-<div *ngFor="let cont of contact">
+<!-- <div *ngFor="let cont of contact">
   
   {{cont.status}}
-</div>
+</div> -->
 
 
 <div class="container">
@@ -14,7 +14,7 @@
               <form (submit)="getContact()">
                 <div class="form-group input-group">
                   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                  <input class="form-control" type="email" [(ngModel)]="email" name='email' placeholder="email"/>          
+                  <input class="form-control" type="email" [(ngModel)]="email" name='email' placeholder="username"/>          
                 </div>
  
                 <div class="form-group">
@@ -26,3 +26,5 @@
           </div>    
         </div>
       </div>
+
+      <div *ngFor="let cont of contact" class="alert alert-info center-block" style="width: 12%;" role="alert"> <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>  application is {{cont.status}} </div>

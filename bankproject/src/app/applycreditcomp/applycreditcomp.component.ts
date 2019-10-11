@@ -28,7 +28,7 @@ export class ApplycreditcompComponent implements OnInit {
   employer: string;
   emp_phone: string;
   time_employed: number;
-  status: string = "Pending";
+  status: string ;
 
   getIncome():string{
     return this.income;

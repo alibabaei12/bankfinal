@@ -1,0 +1,12 @@
+/* .containerpic{
+    background-color: lightblue;
+} */
+header{
+    align-self: center;
+}
+img {
+    position: relative;
+    left: 17%;
+    top: 10%;
+
+}
