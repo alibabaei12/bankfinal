@@ -7,7 +7,7 @@
                 Last Name: <span>{{cont.last_name}}</span><br>
 
                 <button type="submit" (click)="loadContact(cont.email)" class="btn btn-primary">View</button>
-                <button type="submit" class="btn btn-success">Approve</button>
+                <button type="submit" (click)="accepted(cont.email)"  class="btn btn-success">Approve</button>
                 <button type="submit" class="btn btn-danger">Reject</button>
             </li>
         </ul>

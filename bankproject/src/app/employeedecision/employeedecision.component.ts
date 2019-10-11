@@ -27,4 +27,9 @@ export class EmployeedecisionComponent implements OnInit {
     this.show=!this.show;
     this.contactService.getContacts(email).subscribe(posts=>{this.loadInfor=posts})
   }
+
+  accepted(email)
+  {
+    this.contactService.updateData(email, "Accpeted").subscribe(posts=>{console.log("it worked")})
+  }
 }
